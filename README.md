@@ -45,3 +45,16 @@ inline fun <R, A, B, C, D> letAll(a: A?, b: B?, c: C?, d: D?, block: (A, B, C, D
   } else null
 ```
 etc.
+
+## 3. Functional programming ##
+
+### 3.1 Perform `filterNotNull` on `Collection` with predicate ###
+
+```kotlin
+fun <T> Collection<T>.filterNotNull(predicate: (T)->Any? ): Collection<T> {
+    return this.filter {
+        predicate(it) != null
+    }
+}
+```
+

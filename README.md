@@ -58,3 +58,31 @@ fun <T> Collection<T>.filterNotNull(predicate: (T)->Any?): Collection<T> {
 }
 ```
 
+### 3.2 Perform `sumBy` on `Collection` for `Long`, `Float`, `Double` (missing from standard library) ###
+```kotlin
+inline fun <T> Iterable<T>.sumByLong(selector: (T) -> Long): Long {
+  var sum: Long = 0
+  for (element in this) {
+    sum += selector(element)
+  }
+  return sum
+}
+```
+```kotlin
+inline fun <T> Iterable<T>.sumByFloat(selector: (T) -> Float): Float {
+  var sum: Float = 0f
+  for (element in this) {
+    sum += selector(element)
+  }
+  return sum
+}
+```
+```kotlin
+inline fun <T> Iterable<T>.sumByDouble(selector: (T) -> Double): Double {
+  var sum: Double = 0.0
+  for (element in this) {
+    sum += selector(element)
+  }
+  return sum
+}
+```

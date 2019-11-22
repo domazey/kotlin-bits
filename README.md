@@ -51,10 +51,10 @@ etc.
 ### 3.1 Perform `filterNotNull` on `Collection` with predicate ###
 
 ```kotlin
-fun <T> Collection<T>.filterNotNull(predicate: (T)->Any? ): Collection<T> {
-    return this.filter {
-        predicate(it) != null
-    }
+fun <T> Collection<T>.filterNotNull(predicate: (T)->Any?): Collection<T> {
+  return this.filter {
+    predicate(it) != null
+  }
 }
 ```
 

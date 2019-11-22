@@ -9,6 +9,13 @@ Community project for Kotlin language that provides development improvements.
 fun Boolean.asUnit(): Unit? = if(this) Unit else null
 ```
 
+### 1.2 Check if nullable `Boolean` is `true` or `false` ###
+
+```kotlin
+val Boolean?.isTrue get() = this == true
+val Boolean?.isFalse get() = !isTrue
+```
+
 ## 2. Nullability ##
 
 ### 2.1 Multi-argument version of `let` method ###

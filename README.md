@@ -51,11 +51,8 @@ etc.
 ### 3.1 Perform `filterNotNull` on `Collection` with predicate ###
 
 ```kotlin
-fun <T> Collection<T>.filterNotNull(predicate: (T)->Any?): Collection<T> {
-  return this.filter {
-    predicate(it) != null
-  }
-}
+inline fun <reified T> Collection<T>.filterNotNull(crossinline predicate: (T) -> Any?): Collection<T> =
+  filter { predicate(it) != null }
 ```
 
 ### 3.2 Perform `sumBy` on `Collection` for `Long`, `Float`, `Double` (missing from standard library) ###

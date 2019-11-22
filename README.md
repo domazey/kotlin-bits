@@ -84,6 +84,11 @@ inline fun <T> Iterable<T>.sumByDouble(selector: (T) -> Double): Double {
 }
 ```
 
+### 3.3 Find object of specific type in a `Collection` ###
+```kotlin
+  inline fun <reified T> List<*>.findIsInstance(): T? =
+    filterIsInstance<T>().firstOrNull()
+```
 ## 4. Numeric operations ##
 
 ### 4.1 Perform `round` function for `N` decimal places for `Double` ###

@@ -86,3 +86,17 @@ inline fun <T> Iterable<T>.sumByDouble(selector: (T) -> Double): Double {
   return sum
 }
 ```
+
+## 4. Numeric operations ##
+
+### 4.1 Perform `round` function for `N` decimal places for `Double` ###
+
+```kotlin
+fun Double.round(decimals: Int): Double {
+  var multiplier = 1.0
+  repeat(decimals) { multiplier *= 10 }
+  return round(this * multiplier) / multiplier
+}
+```
+
+

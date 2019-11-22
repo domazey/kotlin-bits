@@ -46,7 +46,7 @@ inline fun <R, A, B, C, D> letAll(a: A?, b: B?, c: C?, d: D?, block: (A, B, C, D
 ```
 etc.
 
-## 3. Functional programming ##
+## 3. Collections ##
 
 ### 3.1 Perform `filterNotNull` on `Collection` with predicate ###
 
